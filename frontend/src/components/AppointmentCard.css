@@ -1,0 +1,111 @@
+.appointment-card {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.appointment-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.appointment-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.appointment-card p {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.appointment-card strong {
+  color: var(--text-main);
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.status-badge::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Status variants with glowing Antigravity aesthetic */
+.status-pending {
+  border-left: 4px solid #f59e0b;
+}
+.status-pending .status-badge {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+.status-pending .status-badge::before {
+  background-color: #fcd34d;
+  box-shadow: 0 0 8px #fcd34d;
+}
+
+.status-confirmed {
+  border-left: 4px solid #0ea5e9;
+}
+.status-confirmed .status-badge {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+}
+.status-confirmed .status-badge::before {
+  background-color: #7dd3fc;
+  box-shadow: 0 0 8px #7dd3fc;
+}
+
+.status-cancelled {
+  border-left: 4px solid #f43f5e;
+}
+.status-cancelled .status-badge {
+  background-color: rgba(244, 63, 94, 0.1);
+  color: #fda4af;
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.15);
+}
+.status-cancelled .status-badge::before {
+  background-color: #fda4af;
+  box-shadow: 0 0 8px #fda4af;
+}
